@@ -1,0 +1,17 @@
+<table class="table lessons-list card-strong">
+  <tbody>
+    <tr *ngFor="let lesson of lessons">
+      <td class="viewed">
+        <input type="checkbox" [checked]="lesson.completed" (click)="toggleLessonViewd(lesson)">
+      </td>
+      <td class="lesson-title" [ngClass]="{'lesson-viewed':lesson.completed}">{{ lesson.description }}</td>
+      <td class="duration">
+        <i class="md-icon duration-icon">access_time</i>
+        <span>{{ lesson.duration }}</span>
+      </td>
+      <td class="durration">
+        <button class="button-highlight" (click)="delete(lesson)">X</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
